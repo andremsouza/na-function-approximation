@@ -1,10 +1,10 @@
 % Main script
+% Receives user input and calls other functions to calculate the results
 format long
 
-
-disp("\nEsse programa irá fazer os cálculos solicitados na especificação.")
 % Getting user input
 disp("\nRecebendo inputs do usuário: ")
+disp("Para valores padrão, entre em seguida com os seguintes valores: a=1, b=2, n=1000")
 fflush(stdout);
 while(true)
   try
@@ -36,5 +36,14 @@ I(f, 0, b, n)
 disp("Verificando existencia de raiz de F(x) no intervalo [a,b] dado: ")
 F(f, 0, a, n)*F(f, 0, b, n)
 if ans < 0
-  disp("Existe uma raíz de F(x) no intervalo [a, b]")
+  disp("Existe ao menos uma raíz de F(x) no intervalo [a, b]")
+  disp("\nEncontrando a raiz de F(x) no intervalo [a,b], utilizando o método de Newton:")
+  disp("Tomando x0 = 0.5, e eps = 1e-10:")
+  [X, err] = newtonr(@(x) F(f, 0, x, n), f, 0.5, 1e-10);
+  disp("Raíz: ")
+  X(size(X)(2))
+  disp("Erro: ")
+  err(size(err)(2))
+  disp("F(x) na raiz encontrada: ")
+  F(f, 0, x, n)
 endif;
