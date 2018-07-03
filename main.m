@@ -41,7 +41,7 @@ if ans < 0
   disp("Tomando x0 = 0.5, e eps = 1e-10:")
   [X, err] = newtonr(@(x) F(f, 0, x, n), f, 0.5, 1e-10);
   disp("Raíz: ")
-  X(size(X)(2))
+  x = X(size(X)(2))
   disp("Erro: ")
   err(size(err)(2))
   disp("F(x) na raiz encontrada: ")
